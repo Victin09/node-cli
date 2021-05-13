@@ -1,0 +1,33 @@
+{
+    "name": "node-cli",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "bin": {
+        "node-cli": "./bin/bin.js"
+    },
+    "dependencies": {
+        "chalk": "^4.1.1",
+        "fs-extra": "^10.0.0",
+        "inquirer": "^8.0.0"
+    },
+    "devDependencies": {
+        "eslint": "^7.26.0",
+        "eslint-config-airbnb-base": "^14.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-prettier": "^3.4.0",
+        "husky": "^6.0.0",
+        "lint-staged": "^11.0.0",
+        "prettier": "^2.3.0"
+    },
+    "scripts": {
+        "dev": "node ./bin/bin.js",
+        "precommit": "lint-staged",
+        "lint": "eslint ./src/ --ignore-path .gitignore",
+        "lint:fix": "eslint ./src/ --ignore-path .gitignore --fix"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
