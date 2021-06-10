@@ -3,8 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const chalk = require('chalk');
 
-const createProjectFolder = require('./utils/project-utils');
-const generateExpressProject = require('./generators/express');
+const generateProject = require('./utils/questions-utils');
 
 // Check if package.json exists in the location
 const packagePath = path.join(process.cwd(), 'now.json');
@@ -12,35 +11,7 @@ const existingPackage = fs.existsSync(packagePath);
 
 // Run cli project setup
 const runProjectSetup = async () => {
-    const projectSetup = await inquirer.prompt([
-        // Ask for package manager
-        // {
-        //     type: 'list',
-        //     name: 'type',
-        //     message: 'What type of project? 📦',
-        //     choices: ['express', 'react', 'vue']
-        // },
-        {
-            type: 'list',
-            name: 'type',
-            message: 'What type of project? 📦',
-            choices: ['express', 'react', 'vue']
-        },
-        {
-            type: 'text',
-            name: 'projectName',
-            message: 'What is the name of the project? 🤔',
-            default: path.basename(process.cwd())
-        }
-    ]);
-    if (projectSetup.projectName !== '.') createProjectFolder(projectSetup.projectName);
-    switch (projectSetup.type) {
-        case 'express':
-            generateExpressProject(projectSetup.projectName);
-            break;
-        default:
-            break;
-    }
+    generateProject();
 };
 
 // Run CLI

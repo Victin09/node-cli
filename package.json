@@ -8,8 +8,10 @@
     },
     "dependencies": {
         "chalk": "^4.1.1",
+        "cli-spinners": "^2.6.0",
         "fs-extra": "^10.0.0",
-        "inquirer": "^8.0.0"
+        "inquirer": "^8.0.0",
+        "ora": "^5.4.0"
     },
     "devDependencies": {
         "eslint": "^7.26.0",
@@ -24,8 +26,8 @@
     "scripts": {
         "dev": "node ./bin/bin.js",
         "precommit": "lint-staged",
-        "lint": "eslint ./src/ --ignore-path .gitignore",
-        "lint:fix": "eslint ./src/ --ignore-path .gitignore --fix"
+        "lint": "eslint ./src/ --ignore-path .eslintignore",
+        "lint:fix": "eslint ./src/ --ignore-path .eslintignore --fix"
     },
     "keywords": [],
     "author": "",
