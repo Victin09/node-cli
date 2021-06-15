@@ -3,7 +3,7 @@ const cp = require('child_process');
 
 const Spinner = require('./spinner-utils');
 const messages = require('../constants/messages');
-const projectGetStarted = require('./project-utils');
+const { projectGetStarted } = require('./project-utils');
 
 const installNodeModules = async projectOptions => {
     const options = {
